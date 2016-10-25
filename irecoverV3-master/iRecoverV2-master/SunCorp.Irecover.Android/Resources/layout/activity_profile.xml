@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <include
+        layout="@layout/toolbar_with_back_button"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            local:MvxBind="Visibility Visibility(IsBusy)"
+            />
+          
+            <TextView
+                android:text="@string/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/profile_name_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                local:MvxBind="Text ProfileName"/>
+
+            <TextView
+                android:text="@string/profile_car_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/profile_car_registration_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin" 
+                local:MvxBind="Text CarRegistration"/>
+
+            <TextView
+                android:text="@string/profile_car_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/profile_car_contact_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin" 
+                local:MvxBind="Text ContactInfo"/>
+
+            <TextView
+                android:text="@string/profile_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/profile_age_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                local:MvxBind="Text Age"/>
+
+            <TextView
+                android:text="@string/profile_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/profile_sex_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                local:MvxBind="Text Sex"/>
+
+            <TextView
+                android:text="@string/profile_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/profile_address_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin" 
+                local:MvxBind="Text Address"/>
+
+            <TextView
+                android:text="@string/profile_policy_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/profile_policy_number_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                local:MvxBind="Text PolicyNumber"/>
+          
+          <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/colorPrimary"
+               style="?android:attr/borderlessButtonStyle"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="20dp"
+               android:layout_marginStart="@dimen/view_container_margin"
+               android:layout_marginEnd="@dimen/view_container_margin"
+               android:text="@string/general_save"
+               android:textColor="@android:color/white"
+               local:MvxBind="Click SaveCommand"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <include
+        layout="@layout/toolbar_new_item"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/new_witness_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/new_witness_name_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin" />
+
+            <TextView
+                android:text="@string/new_witness_car_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/new_witness_car_registration_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin" />
+
+            <TextView
+                android:text="@string/new_witness_car_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/new_witness_car_contact_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin" />
+
+            <TextView
+                android:text="@string/new_witness_car_additional_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:inputType="textPersonName"
+                android:hint="@string/new_witness_car_additional_information_hint"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:lines="4"
+                android:gravity="top"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginStart="@dimen/view_container_margin"
+                android:layout_marginEnd="@dimen/view_container_margin" />
+
+          <Button
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorPrimary"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_marginTop="20dp"
+              android:layout_marginBottom="20dp"
+              android:layout_marginStart="@dimen/view_container_margin"
+              android:layout_marginEnd="@dimen/view_container_margin"
+              android:text="@string/general_save"
+                android:textColor="@android:color/white"
+              local:MvxBind="Click SaveCommand"/>
+            </LinearLayout>
+    </ScrollView>
+</LinearLayout>
