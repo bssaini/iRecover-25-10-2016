@@ -41,8 +41,7 @@ namespace SunCorp.Irecover.Android.UI.Activities
             var toolbarTitle = FindViewById<TextView>(Resource.Id.toolbar_title);
             toolbarTitle.Text = "Profile";
 
-            //progressBar = FindViewById<ProgressBar>(Resource.Id.loadingProgressBar);
-            //progressBar.Visibility = ViewStates.Gone;
+            
         }
     }
 }

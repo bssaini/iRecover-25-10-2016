@@ -19,6 +19,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+      <ProgressBar
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            local:MvxBind="Visibility Visibility(IsBusy)"
+            />
+
       <TextView
           android:text="@string/new_claim_name"
           android:layout_width="match_parent"
@@ -37,7 +45,8 @@
           android:ems="10"
           android:textColorHint="@color/hint_color"
           android:layout_marginStart="@dimen/view_container_margin"
-          android:layout_marginEnd="@dimen/view_container_margin" />
+          android:layout_marginEnd="@dimen/view_container_margin"
+          local:MvxBind="Text Name"/>
 
       <TextView
           android:text="@string/new_claim_type"
@@ -58,7 +67,8 @@
           android:ems="10"
           android:textColorHint="@color/hint_color"
           android:layout_marginStart="@dimen/view_container_margin"
-          android:layout_marginEnd="@dimen/view_container_margin" />
+          android:layout_marginEnd="@dimen/view_container_margin"
+          local:MvxBind="Text AccidentType"/>
 
       <TextView
           android:text="@string/new_claim_time"
@@ -78,7 +88,8 @@
           android:ems="10"
           android:textColorHint="@color/hint_color"
           android:layout_marginStart="@dimen/view_container_margin"
-          android:layout_marginEnd="@dimen/view_container_margin" />
+          android:layout_marginEnd="@dimen/view_container_margin"
+          local:MvxBind="Text AccidentTime"/>
 
       <TextView
           android:text="@string/new_claim_witnesses"

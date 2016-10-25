@@ -32,5 +32,11 @@ namespace SunCorp.Irecover.Android.UI.Activities
             var toolbarTitle = FindViewById<TextView>(Resource.Id.toolbar_title);
             toolbarTitle.Text = "New Claim";
         }
+
+        protected override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+            SetContentView(Resource.Layout.activity_new_claim);
+        }
     }
 }

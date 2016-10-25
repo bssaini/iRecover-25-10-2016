@@ -29,5 +29,11 @@ namespace SunCorp.Irecover.Android.UI.Activities.Rehab
             var toolbarTitle = FindViewById<TextView>(Resource.Id.toolbar_title);
             toolbarTitle.Text = "Program";
         }
+
+        protected override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+            SetContentView(Resource.Layout.activity_view_program);
+        }
     }
 }
