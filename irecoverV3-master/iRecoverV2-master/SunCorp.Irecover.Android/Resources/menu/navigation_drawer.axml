@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:local="http://schemas.android.com/apk/res-auto">
+  <group android:id="@+id/nav_footer" android:title="">
+    <item
+      android:id="@+id/nav_claim"
+      android:icon="@drawable/ic_drawer_claim"
+      android:title="@string/drawer_claim" />
+   
+        <item
+      android:id="@+id/nav_account"
+      android:icon="@drawable/ic_drawer_account"
+      android:title="@string/drawer_account" />
+     
+          <item
+      android:id="@+id/nav_history"
+      android:icon="@drawable/ic_drawer_history"
+      android:title="@string/drawer_history" />
+    
+        <item
+      android:id="@+id/nav_contact"
+      android:icon="@drawable/ic_drawer_contact"
+      android:title="@string/drawer_contact" />
+    
+        <item
+      android:id="@+id/nav_settings"
+      android:icon="@drawable/ic_drawer_settings"
+      android:title="@string/drawer_settings" />
+  </group>
+</menu>
