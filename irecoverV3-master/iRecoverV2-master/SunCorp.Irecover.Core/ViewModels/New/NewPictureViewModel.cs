@@ -7,6 +7,8 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Plugins.PictureChooser;
 using SunCorp.IRecover.ViewModels.Add;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace SunCorp.IRecover.ViewModels.New
 {
@@ -15,6 +17,7 @@ namespace SunCorp.IRecover.ViewModels.New
         private byte[] mPictureBytes;
         private Action mOnUploadImageAction;
         private ICommand mAddPicture;
+        private ICommand mSaveCommand;
         private int mPictureSize;
 
         private IMvxPictureChooserTask mPictureChooserTask;
@@ -70,6 +73,16 @@ namespace SunCorp.IRecover.ViewModels.New
                 return mAddPicture;
             }
         }
+
+        public ICommand SaveCommand
+        {
+            get
+            {
+                mSaveCommand = mSaveCommand ?? new MvxCommand(UploadProcess);
+                return mSaveCommand;
+            }
+        }
+
         public void ChoosePicture()
         {
             mPictureChooserTask.ChoosePictureFromLibrary(PictureSize, 95, OnPictureAvailable, OnChoosePictureCancelled);
@@ -121,6 +134,44 @@ namespace SunCorp.IRecover.ViewModels.New
                 imageStream.CopyTo(ms);
                 return ms.ToArray();
             }
+        }
+
+        private async void UploadProcess()
+        {
+            await UploadImage();
+        }
+
+        private async Task<String> UploadImage()
+        {
+            var UPLOAD_URL = "https://n8983631.blob.core.windows.net/accidentpictures";
+
+            byte[] bitmapData = PictureBytes;
+
+            var fileContent = new ByteArrayContent(bitmapData);
+
+            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/octet-stream");
+            fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+            {
+                Name = "file",
+                FileName = "image.jpg"
+            };
+
+            string boundary = "---8d0f01e6b3b5dafaaadaad";
+            MultipartFormDataContent multipartContent = new MultipartFormDataContent(boundary);
+            multipartContent.Add(fileContent);
+
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response = await httpClient.PostAsync(UPLOAD_URL, multipartContent);
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                return content;
+            } else
+            {
+                var ttt = "sdfs";
+            }
+
+            return null;
         }
     }
 }

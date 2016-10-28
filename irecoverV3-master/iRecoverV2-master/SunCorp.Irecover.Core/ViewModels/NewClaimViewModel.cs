@@ -46,6 +46,16 @@ namespace SunCorp.IRecover.ViewModels
             }
         }
 
+        public void Init(NewClaimInfoData data)
+        {
+            if(data != null)
+            {
+                Name = data.name;
+                AccidentType = data.accidentType;
+                AccidentTime = data.accidentTime;
+            }
+        }
+
         public ICommand SaveCommand
         {
             get { mSaveCommand = mSaveCommand ?? new MvxCommand(SaveInfoToServer);
@@ -85,6 +95,7 @@ namespace SunCorp.IRecover.ViewModels
             try
             {
                 await infoTable.InsertAsync(item);
+                Close(this);
 
             }
             catch (Exception e)

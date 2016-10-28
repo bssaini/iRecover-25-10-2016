@@ -41,6 +41,9 @@
     <Compile Include="AppStart.cs" />
     <Compile Include="CoreApp.cs" />
     <Compile Include="Data\AccidentInfoData.cs" />
+    <Compile Include="Data\AccidentNewContactInfoData.cs" />
+    <Compile Include="Data\AccidentOtherDriver.cs" />
+    <Compile Include="Data\AccidentWitnessInfoData.cs" />
     <Compile Include="Data\AccountInfoData.cs" />
     <Compile Include="Data\ClaimModel.cs" />
     <Compile Include="Data\HelperInfoData.cs" />

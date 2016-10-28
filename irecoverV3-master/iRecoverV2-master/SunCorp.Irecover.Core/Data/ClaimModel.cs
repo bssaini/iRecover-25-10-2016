@@ -18,6 +18,7 @@ namespace SunCorp.IRecover.Data
                 RaisePropertyChanged(() => Name);
             }
         }
+
         public bool IsResolved
         {
             get { return mIsResolved; }

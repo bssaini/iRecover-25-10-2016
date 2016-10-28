@@ -34,6 +34,12 @@ namespace SunCorp.Irecover.Android.UI.Activities
             toolbarTitle.Text="Claim History";
 
         }
-        
+
+        protected override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+            SetContentView(Resource.Layout.activity_claim_list);
+        }
+
     }
 }

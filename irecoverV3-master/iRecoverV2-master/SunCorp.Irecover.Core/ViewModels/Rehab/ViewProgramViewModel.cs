@@ -60,6 +60,16 @@ namespace SunCorp.IRecover.ViewModels.Rehab
             }
         }
 
+        public void Init(ProgramInfoData data)
+        {
+            if(data != null)
+            {
+                Name = data.name;
+                ProgramContact = data.programContact;
+                AdditionalInfo = data.additionalInfo;
+            }
+        }
+
         public async void SaveInfoToServer()
         {
             if (client == null || string.IsNullOrEmpty(Name))
@@ -77,6 +87,7 @@ namespace SunCorp.IRecover.ViewModels.Rehab
             try
             {
                 await infoTable.InsertAsync(item);
+                Close(this);
 
             }
             catch (Exception e)

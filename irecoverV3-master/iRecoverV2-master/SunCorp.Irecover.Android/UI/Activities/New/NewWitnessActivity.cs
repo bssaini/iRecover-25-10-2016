@@ -29,5 +29,11 @@ namespace SunCorp.Irecover.Android.UI.Activities.New
             var toolbarTitle = FindViewById<TextView>(Resource.Id.toolbar_title);
             toolbarTitle.Text = "Add Witness";
         }
+
+        protected override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+            SetContentView(Resource.Layout.activity_new_witness);
+        }
     }
 }

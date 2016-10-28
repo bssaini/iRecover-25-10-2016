@@ -23,7 +23,7 @@ namespace SunCorp.IRecover.ViewModels
         private ICommand mGotoAddWitnessCommand;
         private ICommand mGotoAddOherDriversCommand;
         private ICommand mGotoAddPicturesCommand;
-        private ICommand mGotoAddVoiceMemosCommand;
+        //private ICommand mGotoAddVoiceMemosCommand;
         private ICommand mGotoAddContactCommand;
         private ICommand mSaveCommand;
 
@@ -99,14 +99,14 @@ namespace SunCorp.IRecover.ViewModels
             }
         }
 
-        public ICommand GotoAddVoiceMemosCommand
-        {
-            get
-            {
-                mGotoAddVoiceMemosCommand = mGotoAddVoiceMemosCommand ?? new MvxCommand(GoToAddVoiceMemosAction);
-                return mGotoAddVoiceMemosCommand;
-            }
-        }
+        //public ICommand GotoAddVoiceMemosCommand
+        //{
+        //    get
+        //    {
+        //        mGotoAddVoiceMemosCommand = mGotoAddVoiceMemosCommand ?? new MvxCommand(GoToAddVoiceMemosAction);
+        //        return mGotoAddVoiceMemosCommand;
+        //    }
+        //}
 
         public ICommand GotoAddContactCommand
         {
@@ -137,6 +137,7 @@ namespace SunCorp.IRecover.ViewModels
             try
             {
                 await infoTable.InsertAsync(item);
+                Close(this);
 
             }
             catch (Exception e)
@@ -185,10 +186,10 @@ namespace SunCorp.IRecover.ViewModels
             ShowViewModel<AddPicturesViewModel>();
         }
 
-        private void GoToAddVoiceMemosAction()
-        {
-            ShowViewModel<AddVoiceMemosViewModel>();
-        }
+        //private void GoToAddVoiceMemosAction()
+        //{
+        //    ShowViewModel<AddVoiceMemosViewModel>();
+        //}
         private void GoToAddContactAction()
         {
             ShowViewModel<AddContactsViewModel>();

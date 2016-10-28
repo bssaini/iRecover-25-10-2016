@@ -113,6 +113,7 @@ namespace SunCorp.IRecover.ViewModels
             try
             {
                 await infoTable.InsertAsync(item);
+                Close(this);
 
             } catch(Exception e)
             {

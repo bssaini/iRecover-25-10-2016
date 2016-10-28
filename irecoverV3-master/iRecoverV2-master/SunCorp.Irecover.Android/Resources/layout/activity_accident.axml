@@ -14,15 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-          
-          <ProgressBar
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            local:MvxBind="Visibility Visibility(IsBusy)"
-            />  
-          
+            <ProgressBar
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                local:MvxBind="Visibility Visibility(IsBusy)" />
             <TextView
                 android:text="@string/accident_type"
                 android:layout_width="match_parent"
@@ -41,7 +38,7 @@
                 android:textColorHint="@color/hint_color"
                 android:layout_marginStart="@dimen/view_container_margin"
                 android:layout_marginEnd="@dimen/view_container_margin"
-                local:MvxBind="Text AccidentType"/>
+                local:MvxBind="Text AccidentType" />
             <TextView
                 android:text="@string/accident_time"
                 android:layout_width="match_parent"
@@ -60,7 +57,7 @@
                 android:textColorHint="@color/hint_color"
                 android:layout_marginStart="@dimen/view_container_margin"
                 android:layout_marginEnd="@dimen/view_container_margin"
-                local:MvxBind="Text AccidentTime"/>
+                local:MvxBind="Text AccidentTime" />
             <TextView
                 android:text="@string/accident_details"
                 android:layout_width="match_parent"
@@ -80,8 +77,8 @@
                 android:gravity="top"
                 android:textColorHint="@color/hint_color"
                 android:layout_marginStart="@dimen/view_container_margin"
-                android:layout_marginEnd="@dimen/view_container_margin" 
-                local:MvxBind="Text AccidentDetail"/>
+                android:layout_marginEnd="@dimen/view_container_margin"
+                local:MvxBind="Text AccidentDetail" />
             <TextView
                 android:text="@string/accident_notes"
                 android:layout_width="match_parent"
@@ -101,8 +98,8 @@
                 android:textColorHint="@color/hint_color"
                 android:gravity="top"
                 android:layout_marginStart="@dimen/view_container_margin"
-                android:layout_marginEnd="@dimen/view_container_margin" 
-                local:MvxBind="Text AccidentNote"/>
+                android:layout_marginEnd="@dimen/view_container_margin"
+                local:MvxBind="Text AccidentNote" />
             <Button
                 android:text="@string/accident_witness"
                 style="?android:attr/borderlessButtonStyle"
@@ -145,7 +142,7 @@
                 android:textColor="@android:color/black"
                 android:drawableEnd="@drawable/ic_chevron_right"
                 local:MvxBind="Click GotoAddPicturesCommand" />
-            <Button
+            <!--<Button
                 android:text="@string/accident_voice_memos"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
@@ -158,7 +155,7 @@
                 android:background="@android:color/white"
                 android:textColor="@android:color/black"
                 android:drawableEnd="@drawable/ic_chevron_right"
-                local:MvxBind="Click GotoAddVoiceMemosCommand" />
+                local:MvxBind="Click GotoAddVoiceMemosCommand" />-->
             <Button
                 android:text="@string/accident_contacts"
                 style="?android:attr/borderlessButtonStyle"

@@ -33,6 +33,9 @@ namespace SunCorp.Irecover.Android.UI.Activities.New
             get { return (NewPictureViewModel)base.ViewModel; }
             set { base.ViewModel = value; }
         }
+
+
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -48,6 +51,11 @@ namespace SunCorp.Irecover.Android.UI.Activities.New
             ViewModel.PictureSize = (int) ConvertDpToPixel(PICTURE_SIZE, BaseContext);
         }
 
+        protected override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+            SetContentView(Resource.Layout.activity_new_picture);
+        }
 
         private void OnUploadImageAction()
         {

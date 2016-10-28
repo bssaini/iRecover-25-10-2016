@@ -183,7 +183,7 @@
           android:padding="8dp"
           android:text="@string/new_claim_btn_pictures" />
 
-      <TextView
+      <!--<TextView
           android:text="@string/new_claim_memos"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -202,7 +202,7 @@
           android:layout_marginStart="@dimen/view_container_margin"
           android:layout_marginEnd="@dimen/view_container_margin"
           android:padding="8dp"
-          android:text="@string/new_claim_btn_memos" />
+          android:text="@string/new_claim_btn_memos" />-->
 
       <Button
           android:layout_width="match_parent"
