@@ -35,7 +35,8 @@
                 android:ems="10"
                 android:textColorHint="@color/hint_color"
                 android:layout_marginStart="@dimen/view_container_margin"
-                android:layout_marginEnd="@dimen/view_container_margin" />
+                android:layout_marginEnd="@dimen/view_container_margin"
+                local:MvxBind="Text Name"/>
           
           <ImageView 
                 android:layout_width="match_parent"

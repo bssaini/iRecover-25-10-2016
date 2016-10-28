@@ -9,6 +9,7 @@ using MvvmCross.Plugins.PictureChooser;
 using SunCorp.IRecover.ViewModels.Add;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Diagnostics;
 
 namespace SunCorp.IRecover.ViewModels.New
 {
@@ -21,6 +22,7 @@ namespace SunCorp.IRecover.ViewModels.New
         private int mPictureSize;
 
         private IMvxPictureChooserTask mPictureChooserTask;
+        public string Name { get; set; }
 
         public NewPictureViewModel()
         {
@@ -78,7 +80,7 @@ namespace SunCorp.IRecover.ViewModels.New
         {
             get
             {
-                mSaveCommand = mSaveCommand ?? new MvxCommand(UploadProcess);
+                mSaveCommand = mSaveCommand ?? new MvxCommand(UploadImage);
                 return mSaveCommand;
             }
         }
@@ -136,42 +138,33 @@ namespace SunCorp.IRecover.ViewModels.New
             }
         }
 
-        private async void UploadProcess()
+        private async void UploadImage()
         {
-            await UploadImage();
-        }
-
-        private async Task<String> UploadImage()
-        {
-            var UPLOAD_URL = "https://n8983631.blob.core.windows.net/accidentpictures";
+            var uriAzure = "https://n8983631.blob.core.windows.net/accidentpictures/";
+            var title = Name + ".jpg";
+            var sas = "?st=2016-10-28T02%3A05%3A00Z&se=2016-10-29T02%3A05%3A00Z&sp=rwdl&sv=2015-12-11&sr=c&sig=PrkhLd4SRNnBZ%2FJNluBL5YFgmNYb5Mjooz%2BE2LcCExA%3D";
 
             byte[] bitmapData = PictureBytes;
 
-            var fileContent = new ByteArrayContent(bitmapData);
+            HttpClient client = new HttpClient();
+            HttpContent requestContent = new ByteArrayContent(bitmapData);
 
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/octet-stream");
-            fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
-            {
-                Name = "file",
-                FileName = "image.jpg"
-            };
+            //Add headers, classify image as jpeg and as a blockblob.
+            requestContent.Headers.Add("Content-Type", "image/jpeg");
+            requestContent.Headers.Add("x-ms-blob-type", "BlockBlob");
 
-            string boundary = "---8d0f01e6b3b5dafaaadaad";
-            MultipartFormDataContent multipartContent = new MultipartFormDataContent(boundary);
-            multipartContent.Add(fileContent);
+            //upload the image
+            HttpResponseMessage response = await client.PutAsync(uriAzure + title + sas, requestContent);
 
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage response = await httpClient.PostAsync(UPLOAD_URL, multipartContent);
-            if (response.IsSuccessStatusCode)
+            //Success?
+            if (response.IsSuccessStatusCode == true)
             {
-                string content = await response.Content.ReadAsStringAsync();
-                return content;
-            } else
-            {
-                var ttt = "sdfs";
+                Debug.WriteLine("success");
+                Close(this);
             }
 
-            return null;
+
+
         }
     }
 }

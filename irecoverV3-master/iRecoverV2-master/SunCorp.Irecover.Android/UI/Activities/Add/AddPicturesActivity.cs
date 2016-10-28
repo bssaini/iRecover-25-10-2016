@@ -28,5 +28,11 @@ namespace SunCorp.Irecover.Android.UI.Activities.Add
             var toolbarTitle = FindViewById<TextView>(Resource.Id.toolbar_title);
             toolbarTitle.Text = "Add Pictures";
         }
+
+        protected override void OnViewModelSet()
+        {
+            base.OnViewModelSet();
+            SetContentView(Resource.Layout.activity_list);
+        }
     }
 }
