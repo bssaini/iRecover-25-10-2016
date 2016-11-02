@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Android.Content;
 using Android.Support.Design.Widget;
 using Android.Support.V4.Widget;
 using Android.Widget;
-using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Droid.Shared.Presenter;
@@ -13,6 +11,8 @@ using MvvmCross.Droid.Support.V7.RecyclerView;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 using SunCorp.IRecover;
+using SunCorp.Irecover.Core.Interfaces2;
+using SunCorp.Irecover.Core.Services2;
 
 namespace SunCorp.Irecover.Android
 {
@@ -45,6 +45,9 @@ namespace SunCorp.Irecover.Android
 
         protected override void InitializeFirstChance()
         {
+            Mvx.LazyConstructAndRegisterSingleton<IGeoCoder, GeoCoderService>();
+            // Database not implemented? Possible future reference: Mvx.LazyConstructAndRegisterSingleton<ILocationsDatabase, LocationDatabaseAzure>();
+
             base.InitializeFirstChance();
 
             InitDependencyInjection();
